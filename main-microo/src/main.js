@@ -5,6 +5,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import './hk-single-config'
 
+import './utils/components'
+
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 

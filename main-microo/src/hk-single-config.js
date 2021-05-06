@@ -11,7 +11,7 @@ import {registerMicroApps, start} from 'qiankun'
 const microApps = [
     {
         name: 'vue',
-        entry: '//localhost:8081/',
+        entry: '//localhost:8082/',
         container: '#app',
         activeRule: '/app-vue',
     }
