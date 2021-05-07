@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2021-05-02 13:53:19
- * @LastEditTime: 2021-05-04 16:41:17
- * @LastEditors: your name
+ * @LastEditTime: 2021-05-07 14:39:48
+ * @LastEditors: songjun8
  * @Description: In User Settings Edit
- * @FilePath: /micro-list/vue-micro/src/main.js
+ * @FilePath: \micro-list\vue-microo\src\main.js
  */
 import './public-path'
 import Vue from 'vue'
@@ -24,6 +24,7 @@ Vue.use(VueRouter)
 let router = null;
 let instance = null;
 function render(props = {}) {
+  console.log('props', props)
   const { container } = props;
   if (props) {
     actions.setActions(props)
@@ -45,7 +46,8 @@ if (!window.__POWERED_BY_QIANKUN__) {
   render();
 }
 
-export async function bootstrap() {
+export async function bootstrap(props) {
+  console.log('props', props)
   console.log('[vue] vue app bootstraped');
 }
 export async function mount(props) {

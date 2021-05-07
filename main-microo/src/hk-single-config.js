@@ -1,12 +1,15 @@
 /*
  * @Author: your name
  * @Date: 2021-05-02 13:48:23
- * @LastEditTime: 2021-05-04 17:37:43
- * @LastEditors: your name
+ * @LastEditTime: 2021-05-07 17:41:50
+ * @LastEditors: songjun8
  * @Description: In User Settings Edit
- * @FilePath: /micro-list/main-micro/src/hk-single-config.js
+ * @FilePath: \micro-list\main-microo\src\hk-single-config.js
  */
 import {registerMicroApps, start} from 'qiankun'
+import modules from './modules'
+
+console.log('modules', modules)
 
 const microApps = [
     {
@@ -14,6 +17,9 @@ const microApps = [
         entry: '//localhost:8082/',
         container: '#app',
         activeRule: '/app-vue',
+        props: {
+
+        }
     }
 ]
 registerMicroApps(microApps)

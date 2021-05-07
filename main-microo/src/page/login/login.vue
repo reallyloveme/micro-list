@@ -1,10 +1,10 @@
 <!--
  * @Author: songjun
  * @Date: 2021-05-02 15:11:38
- * @LastEditTime: 2021-05-04 17:20:12
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-07 15:37:53
+ * @LastEditors: songjun8
  * @Description: In User Settings Edit
- * @FilePath: /micro-list/main-micro/src/page/login/login.vue
+ * @FilePath: \micro-list\main-microo\src\page\login\login.vue
 -->
 <template>
     <div class="login">
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import actions from '../../utils/communication'
   export default {
     name: 'login',
@@ -57,16 +58,15 @@ import actions from '../../utils/communication'
           name: [
             { validator: validateName, trigger: 'blur' }
           ]
-        },
-        hasLogin: false
+        }
       };
     },
     methods: {
+      ...mapActions(['changeLoginState']),
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            this.hasLogin = true
-            actions.setGlobalState({hasLogin: this.hasLogin})
+            this.changeLoginState()
             // 跳转到子应用
             this.$router.replace('/app-vue')
           } else {
